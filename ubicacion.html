@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pinchados | Ubicación</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FUENTE -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --rojo: #e10600;
+      --amarillo: #ffcc00;
+      --negro: #0f0f0f;
+      --gris: #1b1b1b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--gris);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("bg_banner.png") center/cover no-repeat;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+    }
+
+    .logo img {
+      width: 150px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.15);
+    }
+
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+
+    .menu a img {
+      width: 130px;
+      transition: transform 0.3s ease;
+    }
+
+    .menu a:hover img {
+      transform: scale(1.2);
+    }
+
+    .login button {
+      background: var(--rojo);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login button:hover {
+      background: var(--amarillo);
+      color: black;
+      transform: scale(1.1);
+    }
+
+    /* ===== UBICACION ===== */
+    .ubicacion {
+      background: var(--negro);
+      padding: 80px 30px;
+    }
+
+    .ubicacion h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 50px;
+      color: var(--amarillo);
+    }
+
+    .ubicacion-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 200px;
+      align-items: center;
+    }
+
+    .ubicacion-img img {
+      width: 130%;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,.6);
+    }
+
+    .ubicacion-mapa iframe {
+      width: 100%;
+      height: 350px;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 0 15px 30px rgba(0,0,0,.6);
+    }
+
+    .direccion {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .direccion span {
+      color: var(--amarillo);
+      font-weight: bold;
+    }
+
+    @media(max-width:900px){
+      .ubicacion-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--negro);
+      border-top: 3px solid var(--rojo);
+      padding: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #ccc;
+      margin-top: auto;
+    }
+
+    footer span {
+      color: var(--amarillo);
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav class="nav">
+
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo_pinchados.png" alt="Pinchados">
+      </a>
+    </div>
+
+    <div class="menu">
+      <a href="menu.html"><img src="menu_boton.png"></a>
+      <a href="ubicacion.html"><img src="ubicacion_boton.png"></a>
+      <a href="#"><img src="contacto_boton.png"></a>
+      <a href="#"><img src="nosotros_boton.png"></a>
+    </div>
+
+    <div class="login">
+      <button>INGRESAR</button>
+    </div>
+
+  </nav>
+</header>
+
+
+<!-- UBICACION -->
+<section class="ubicacion">
+
+  <h2>¿Dónde Estamos?</h2>
+
+  <div class="ubicacion-grid">
+
+    <div class="ubicacion-img">
+      <img src="ubicacion_pinchados.png" alt="Ubicación Pinchados">
+    </div>
+
+    <div class="ubicacion-mapa">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3951.7444445568444!2d-72.48796999999999!3d7.921739999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwNTUnMTguMyJOIDcywrAyOScxNi43Ilc!5e0!3m2!1ses-419!2sco!4v1771359967116!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+  </div>
+
+  <div class="direccion">
+    📍 Dirección: <span>Pinchados - BARRIO NIZA</span><br>
+    📞 Teléfono: <span>315 881 0226</span>
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  © 2026 <span>Pinchados</span> · Domicilios: 315 881 0226
+</footer>
+
+</body>
+</html>

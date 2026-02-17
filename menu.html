@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pinchados | Menú</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* COLORES */
+:root{
+--rojo:#e10600;
+--amarillo:#ffcc00;
+--negro:#0f0f0f;
+--gris:#1b1b1b;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Poppins',sans-serif;
+background:var(--gris);
+color:white;
+}
+
+/* HEADER */
+
+header {
+      background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("bg_banner.png") center/cover no-repeat;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+    }
+
+    .logo img {
+      width: 150px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.15);
+    }
+
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+
+    .menu a img {
+      width: 130px;
+      transition: transform 0.3s ease;
+    }
+
+    .menu a:hover img {
+      transform: scale(1.2);
+    }
+
+    .login button {
+      background: var(--rojo);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login button:hover {
+      background: var(--amarillo);
+      color: black;
+      transform: scale(1.1);
+    }
+/* TITULO */
+
+.titulo-menu{
+text-align:center;
+padding:40px;
+}
+
+.titulo-menu h1{
+color:var(--amarillo);
+font-size:2.5rem;
+}
+
+/* CATEGORIAS */
+
+.categorias{
+padding:20px;
+text-align:center;
+}
+
+.categorias-grid{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.categoria{
+display:flex;
+flex-direction:column;
+align-items:center;
+width:110px;
+cursor:pointer;
+transition:.3s;
+}
+
+.categoria img{
+width:110px;
+height:110px;
+object-fit:contain;
+}
+
+.categoria:hover{
+transform:scale(1.2);
+color:var(--amarillo);
+}
+
+/* PRODUCTOS */
+
+.seccion{
+padding:30px 20px;
+}
+
+.seccion h2{
+text-align:center;
+color:var(--amarillo);
+margin-bottom:20px;
+}
+
+.menu-container{
+max-width:2600px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(50px,1fr));
+gap:25px;
+}
+
+.producto{
+background:var(--negro);
+border-radius:5px;
+overflow:hidden;
+text-align:center;
+}
+
+.producto img{
+width:100%;
+height:360px;
+object-fit:cover;
+}
+
+.producto-info{padding:15px;}
+
+.precio{
+color:var(--amarillo);
+font-weight:800;
+margin:10px;
+}
+
+.producto button{
+background:var(--rojo);
+border:none;
+color:white;
+padding:8px 15px;
+border-radius:8px;
+cursor:pointer;
+font-weight:700;
+}
+
+/* BOTON CARRITO */
+
+.carrito-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:var(--amarillo);
+color:black;
+padding:12px 20px;
+border-radius:30px;
+font-weight:800;
+cursor:pointer;
+z-index:1000;
+}
+
+.carrito-btn span{
+background:var(--rojo);
+color:white;
+border-radius:50%;
+padding:3px 8px;
+margin-left:5px;
+}
+
+/* MODALES */
+
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.8);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.modal-box{
+background:var(--negro);
+padding:25px;
+border-radius:15px;
+width:90%;
+max-width:450px;
+max-height:90vh;
+overflow:auto;
+}
+
+.modal textarea,
+.modal select,
+.modal input{
+width:100%;
+padding:8px;
+margin:8px 0;
+border-radius:8px;
+border:none;
+}
+
+.modal button{
+margin:5px;
+padding:8px 15px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-weight:700;
+}
+
+.confirmar{background:var(--amarillo);}
+.cancelar{background:#444;color:white;}
+.eliminar{background:#900;color:white;width:100%;}
+
+.aviso{
+font-size:.85rem;
+color:#ffcc00;
+background:#111;
+padding:8px;
+border-radius:6px;
+}
+
+/* FOOTER */
+
+footer{
+background:var(--negro);
+border-top:3px solid var(--rojo);
+padding:15px;
+text-align:center;
+color:#ccc;
+margin-top:40px;
+}
+
+footer span{color:var(--amarillo);}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<nav class="nav">
+
+<div class="logo">
+<a href="index.html">
+<img src="logo_pinchados.png">
+</a>
+</div>
+
+<div class="menu">
+<a href="menu.html"><img src="menu_boton.png"></a>
+<a href="ubicacion.html"><img src="ubicacion_boton.png"></a>
+<a href="#"><img src="contacto_boton.png"></a>
+<a href="#"><img src="nosotros_boton.png"></a>
+</div>
+
+<div class="login">
+<button>INGRESAR</button>
+</div>
+
+</nav>
+</header>
+
+<!-- CATEGORIAS -->
+
+<section class="categorias">
+
+<div class="categorias-grid">
+
+<div class="categoria" onclick="irA('hamburguesas')">
+<img src="hamburguesas.png">
+<p>Hamburguesas</p>
+</div>
+
+<div class="categoria" onclick="irA('perros')">
+<img src="perros.png">
+<p>Perros</p>
+</div>
+
+<div class="categoria" onclick="irA('pinchos')">
+<img src="pinchos.png">
+<p>Pinchos</p>
+</div>
+
+<div class="categoria" onclick="irA('adicionales')">
+<img src="adicionales.png">
+<p>Adicionales y Bebidas</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTOS -->
+
+<section class="seccion" id="hamburguesas">
+
+<h2>HAMBURGUESAS</h2>
+
+<div class="menu-container">
+
+<div class="producto">
+<img src="diablita_hamburguesa.png">
+<div class="producto-info">
+<h3>La Diablita</h3>
+<div class="precio">$12.000</div>
+<h5>PAN BRIOCHE - 140G DE CARNE - QUESO CHEDDAR - TOCINETA</h5>
+<h5>CEBOLLA - TOMATE - LECHUGA</h5>
+<br></br>
+<button onclick="abrirProducto('Hamburguesa Diablita',12000)">Pedir</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="lsm_hamburguesa.png">
+<div class="producto-info">
+<h3>La Santa María</h3>
+<div class="precio">$16.000</div>
+<h5>PAN BRIOCHE - 140G DE CARNE - POLLO 140G - TOCINETA</h5>
+<h5>QUESO CHEDDAR - CEBOLLA - TOMATE - LECHUGA</h5>
+<br></br>
+<button onclick="abrirProducto('Hamburguesa La Santa María',16000)">Pedir</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="diabla_hamburguesa.png">
+<div class="producto-info">
+<h3>La Diabla</h3>
+<div class="precio">$18.000</div>
+<h5>PAN BRIOCHE - 140G DE CARNE - QUESO CHEDDAR </h5>
+<h5>PIÑA GRILLÉ - TOCINETA - CEBOLLA - TOMATE</h5>
+<br></br>
+<button onclick="abrirProducto('Hamburguesa La Diabla',18000)">Pedir</button>
+</div>
+</div>
+
+
+<div class="producto">
+<img src="porkina_hamburguesa.png">
+<div class="producto-info">
+<h3>La Porkina</h3>
+<div class="precio">$20.000</div>
+<h5>PAN BRIOCHE - 140G DE CARNE - QUESO CHEDDAR - LECHUGA</h5>
+<h5>MERMELADA DE TOCINO - TOCINETA - CEBOLLA - TOMATE</h5>
+<br></br>
+<button onclick="abrirProducto('Hamburguesa La Porkina',20000)">Pedir</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="seccion" id="perros">
+
+<h2>PERROS CALIENTES</h2>
+
+<div class="menu-container">
+
+<div class="producto">
+<img src="cerbero_perro.png">
+<div class="producto-info">
+<h3>Cerbero</h3>
+<div class="precio">$8.000</div>
+<h5>PAN BRIOCHE - SALCHICHA - QUESO MOZZARELLA</h5>
+<h5>PAPAS FOSFORITO - SALSAS DE LA CASA</h5>
+<br></br>
+<button onclick="abrirProducto('Perro Cerbero',8000)">Pedir</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="porky_perro.png">
+<div class="producto-info">
+<h3>Porky</h3>
+<div class="precio">$15.000</div>
+<h5>PAN BRIOCHE - SALCHICHA - QUESO MOZZARELLA</h5>
+<h5>MERMELADA DE TOCINO - SALSAS DE LA CASA</h5>
+<br></br>
+<button onclick="abrirProducto('Perro Porky',15000)">Pedir</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="granjero_perro.png">
+<div class="producto-info">
+<h3>Granjero</h3>
+<div class="precio">$10.000</div>
+<h5>PAN BRIOCHE - SALCHICHA BAÑADA EN BBQ</h5>
+<h5>QUESADILLA DE MAIZ TIERNO - SALSAS DE LA CASA</h5>
+<br></br>
+<button onclick="abrirProducto('Perro Granjero',10000)">Pedir</button>
+</div>
+</div>
+
+
+<div class="producto">
+<img src="arca_perro.png">
+<div class="producto-info">
+<h3>El Arca</h3>
+<div class="precio">$13.000</div>
+<h5>PAN BRIOCHE - DOBLE SALCHICHA - QUESO MOZZARELLA</h5>
+<h5>DOBLE TOCINETA - SALSAS DE LA CASA</h5>
+<br></br>
+<button onclick="abrirProducto('Perro El Arca',13000)">Pedir</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="seccion" id="pinchos">
+
+<h2>PINCHOS</h2>
+
+<div class="menu-container">
+
+<div class="producto">
+<img src="pollo_pincho.png">
+<div class="producto-info">
+<h3>Pollo</h3>
+<div class="precio">$10.000</div>
+<h5>BROCHETA DE POLLO CON PIMENTÓN Y CEBOLLA ASADA</h5>
+<h5>& PAPAS FRITAS</h5>
+<br></br>
+<button onclick="abrirProducto('Pincho de Pollo',10000)">Pedir</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="carne_pincho.png">
+<div class="producto-info">
+<h3>Carne</h3>
+<div class="precio">$12.000</div>
+<h5>BROCHETA DE CARNE CON PIMENTÓN Y CEBOLLA ASADA</h5>
+<h5>& PAPAS FRITAS</h5>
+<br></br>
+<button onclick="abrirProducto('Pincho de Carne',12000)">Pedir</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="mixto_pincho.png">
+<div class="producto-info">
+<h3>Mixto</h3>
+<div class="precio">$14.000</div>
+<h5>BROCHETA DE POLLO Y CARNE CON PIMENTÓN Y CEBOLLA ASADA</h5>
+<h5>& PAPAS FRITAS</h5>
+<br></br>
+<button onclick="abrirProducto('Pincho Mixto',14000)">Pedir</button>
+</div>
+</div>
+
+
+</div>
+</section>
+
+
+<!-- BOTON CARRITO -->
+
+<div class="carrito-btn" onclick="abrirCarrito()">
+🛒 Carrito <span id="contador">0</span>
+</div>
+
+<!-- MODAL PRODUCTO -->
+
+<div class="modal" id="modalProducto">
+
+<div class="modal-box">
+
+<h3 id="prodNombre"></h3>
+
+<label>Cantidad:</label>
+<input type="number" id="prodCantidad" value="1" min="1">
+
+<div class="aviso">
+⚠️ Todas serán iguales.  
+Para diferentes, agrégalas aparte.
+</div>
+
+<textarea id="prodNota" placeholder="Notas"></textarea>
+
+<button class="confirmar" onclick="agregarCarrito()">Agregar</button>
+<button class="cancelar" onclick="cerrarProducto()">Cancelar</button>
+
+</div>
+</div>
+
+<!-- MODAL CARRITO -->
+
+<div class="modal" id="modalCarrito">
+
+<div class="modal-box">
+
+<h3>Tu Pedido</h3>
+
+<div id="listaCarrito"></div>
+
+<hr>
+
+<h4>Nombre</h4>
+
+<input id="nombreCliente" placeholder="Nombre de quien recibe">
+
+<h4>Número de Teléfono</h4>
+
+<input id="telefonoCliente" placeholder="Tu número teléfonico">
+
+<h4>Forma de Pago</h4>
+
+<select id="metodoPago">
+<option>Bancolombia</option>
+<option>Nequi</option>
+<option>Daviplata</option>
+<option>Efectivo</option>
+</select>
+
+<h4>Tipo</h4>
+
+<div class="aviso">
+⚠️ El domicilio es gratis solo para el barrio
+Niza.
+</div>
+
+<select id="tipoPedido" onchange="cambiarTipo()">
+<option value="mesa">Mesa</option>
+<option value="domicilio">Domicilio</option>
+</select>
+
+<div id="mesaBox">
+<select id="mesaNum">
+<option>Mesa 1</option>
+<option>Mesa 2</option>
+<option>Mesa 3</option>
+<option>Mesa 4</option>
+<option>Mesa 5</option>
+<option>Mesa 6</option>
+<option>Mesa 7</option>
+</select>
+</div>
+
+<div id="domicilioBox" style="display:none">
+
+<input id="direccion" placeholder="Dirección">
+<textarea id="detallesDom" placeholder="Detalles"></textarea>
+
+</div>
+
+<h4 id="total"></h4>
+
+<button class="confirmar" onclick="enviarPedido()">Enviar</button>
+<button class="cancelar" onclick="cerrarCarrito()">Cerrar</button>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+ © 2026 <span>Pinchados</span> · Domicilios: 315 881 0226
+</footer>
+
+<script>
+
+/* VARIABLES */
+
+let carrito = [];
+let prodActual = "";
+let precioActual = 0;
+
+/* SCROLL */
+
+function irA(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+/* PRODUCTO */
+
+function abrirProducto(nombre,precio){
+
+prodActual = nombre;
+precioActual = precio;
+
+prodCantidad.value = 1;
+prodNota.value = "";
+telefonoCliente.value = "";
+
+prodNombre.innerText = nombre;
+modalProducto.style.display = "flex";
+}
+
+function cerrarProducto(){
+modalProducto.style.display = "none";
+}
+
+/* AGREGAR */
+
+function agregarCarrito(){
+
+let nota = prodNota.value;
+let telefono = telefonoCliente.value;
+let cant = parseInt(prodCantidad.value);
+
+
+if(cant < 1){
+alert("Cantidad inválida");
+return;
+}
+
+/* BUSCAR SI EXISTE */
+
+let existe = carrito.find(p =>
+p.nombre === prodActual &&
+p.nota === nota
+);
+
+/* SI EXISTE SUMA */
+
+if(existe){
+
+existe.cantidad += cant;
+
+}else{
+
+carrito.push({
+telefono,
+nombre: prodActual,
+precio: precioActual,
+nota,
+cantidad: cant
+});
+
+}
+
+actualizarContador();
+
+cerrarProducto();
+
+}
+
+/* CONTADOR */
+
+function actualizarContador(){
+
+let total = 0;
+
+carrito.forEach(p=>{
+total += p.cantidad;
+});
+
+contador.innerText = total;
+}
+
+/* CARRITO */
+
+function abrirCarrito(){
+
+if(carrito.length==0){
+alert("Vacío");
+return;
+}
+
+renderCarrito();
+modalCarrito.style.display="flex";
+}
+
+function cerrarCarrito(){
+modalCarrito.style.display="none";
+}
+
+/* RENDER */
+
+function renderCarrito(){
+
+let html="";
+let totalCuenta=0;
+
+carrito.forEach((p,i)=>{
+
+let subtotal = p.precio * p.cantidad;
+
+html+=`
+<div style="border-bottom:1px solid #444;padding:10px">
+
+<b>${p.nombre} x${p.cantidad}</b><br>
+
+$${p.precio} c/u — Subtotal: <b>$${subtotal}</b><br>
+
+${p.nota ? "📝 "+p.nota+"<br>" : ""}
+
+<div style="margin:8px 0;display:flex;gap:5px;align-items:center">
+
+<button onclick="disminuir(${i})">➖</button>
+
+<input 
+type="number" 
+min="1" 
+value="${p.cantidad}" 
+style="width:60px;text-align:center"
+onchange="cambiarCantidad(${i},this.value)"
+>
+
+<button onclick="aumentar(${i})">➕</button>
+
+</div>
+
+<button onclick="borrar(${i})" class="eliminar">
+Eliminar
+</button>
+
+</div>
+`;
+
+totalCuenta += subtotal;
+
+});
+
+listaCarrito.innerHTML = html;
+document.getElementById("total").innerText = "Total a pagar: $" + totalCuenta.toLocaleString();
+}
+
+/* AUMENTAR */
+
+function aumentar(i){
+
+carrito[i].cantidad++;
+
+actualizarContador();
+renderCarrito();
+
+}
+
+/* DISMINUIR */
+
+function disminuir(i){
+
+if(carrito[i].cantidad > 1){
+
+carrito[i].cantidad--;
+
+}else{
+
+if(confirm("¿Eliminar producto?")){
+carrito.splice(i,1);
+}
+
+}
+
+actualizarContador();
+renderCarrito();
+
+}
+
+/* CAMBIAR MANUAL */
+
+function cambiarCantidad(i,valor){
+
+let num = parseInt(valor);
+
+if(num < 1 || isNaN(num)){
+num = 1;
+}
+
+carrito[i].cantidad = num;
+
+actualizarContador();
+renderCarrito();
+
+}
+
+/* BORRAR */
+
+function borrar(i){
+
+if(confirm("Eliminar?")){
+carrito.splice(i,1);
+actualizarContador();
+renderCarrito();
+}
+
+}
+
+/* TIPO */
+
+function cambiarTipo(){
+
+let tipo=tipoPedido.value;
+
+mesaBox.style.display=tipo=="mesa"?"block":"none";
+domicilioBox.style.display=tipo=="domicilio"?"block":"none";
+
+}
+
+/* ENVIAR */
+
+function enviarPedido(){
+
+
+let tipo=tipoPedido.value;
+let pago=metodoPago.value;
+
+let mensaje="📋 PEDIDO PINCHADOS\n\n";
+
+let total=0;
+
+carrito.forEach((p,i)=>{
+
+let subtotal = p.precio * p.cantidad;
+
+mensaje+=`${i+1}. ${p.nombre} x${p.cantidad} - $${subtotal}\n`;
+
+if(p.nota) mensaje+=`Nota: ${p.nota}\n`;
+
+mensaje+="\n";
+
+total+=subtotal;
+
+});
+
+mensaje+="----------------\n";
+
+if(tipo=="mesa"){
+
+mensaje+="📍 "+mesaNum.value+"\n";
+
+}else{
+
+if(!direccion.value){
+alert("Ingresa dirección");
+return;
+}
+
+mensaje+="🏠 DOMICILIO DIRECCIÓN: "+direccion.value+"\n";
+
+if(detallesDom.value)
+mensaje+="Detalles: "+detallesDom.value+"\n";
+}
+
+mensaje+="\n💳 Método de Pago: "+pago;
+mensaje+="\n💰 TOTAL: $"+total+"\n";
+
+if(!nombreCliente.value){
+alert("Ingresa un nombre");
+return;
+}
+
+
+if(!telefonoCliente.value){
+alert("Ingresa tú número");
+return;
+}
+
+mensaje+="\nNúmero de telefono: "+telefonoCliente.value+"\n";
+mensaje+="\nNOMBRE: "+nombreCliente.value+"\n";
+
+let url="https://wa.me/573158810226?text="+encodeURIComponent(mensaje);
+
+guardarPedidoAdmin(mensaje,total,pago,tipo);
+
+window.open(url,"_blank");
+
+}
+
+/* GUARDAR ADMIN */
+
+function guardarPedidoAdmin(detalle,total,pago,tipo){
+
+let pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
+
+/* DATOS EXTRA */
+
+let nombre = nombreCliente.value;
+let telefono = telefonoCliente.value;
+let mesa = "";
+let direccionCliente = "";
+
+/* SEGUN TIPO */
+
+if(tipo=="mesa"){
+mesa = mesaNum.value;
+}else{
+direccionCliente = direccion.value;
+}
+
+let nuevo = {
+
+id: Date.now(),
+
+fecha: new Date().toLocaleString(),
+
+nombre: nombre,          // 👤 NOMBRE
+telefono: telefono,      // 📱 TEL
+mesa: mesa,              // 🍽 MESA
+direccion: direccionCliente, // 🏠 DIRECCION
+
+detalle: detalle,
+total: total,
+pago: pago,
+tipo: tipo,
+
+estado: "pendiente"
+
+};
+
+pedidos.push(nuevo);
+
+localStorage.setItem("pedidos",JSON.stringify(pedidos));
+
+}
+
+
+</script>
+
+
+</body>
+</html>
