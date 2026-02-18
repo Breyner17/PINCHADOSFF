@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pinchados | Mi Perfil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FUENTE -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --rojo: #e10600;
+      --amarillo: #ffcc00;
+      --negro: #0f0f0f;
+      --gris: #1b1b1b;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:var(--gris);
+      color:white;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* ===== HEADER ===== */
+
+    header{
+      background:
+        linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+        url("bg_banner.png") center/cover no-repeat;
+    }
+
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 30px;
+    }
+
+    .logo img{
+      width:150px;
+      transition:.3s;
+    }
+
+    .logo img:hover{
+      transform:scale(1.1);
+    }
+
+    .btn-login{
+      background:var(--rojo);
+      border:none;
+      padding:10px 18px;
+      border-radius:8px;
+      color:white;
+      font-weight:700;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    .btn-login:hover{
+      background:var(--amarillo);
+      color:black;
+      transform:scale(1.1);
+    }
+
+    /* ===== PERFIL ===== */
+
+    .perfil-container{
+      flex:1;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:40px 20px;
+    }
+
+    .perfil-box{
+      background:var(--negro);
+      width:100%;
+      max-width:450px;
+      padding:40px 30px;
+      border-radius:20px;
+      box-shadow:0 20px 50px rgba(0,0,0,.7);
+      animation:entrada .6s ease;
+      text-align:center;
+    }
+
+    @keyframes entrada{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .perfil-box h2{
+      color:var(--amarillo);
+      font-size:1.9rem;
+      margin-bottom:10px;
+      font-weight:800;
+    }
+
+    .perfil-box p{
+      font-size:.9rem;
+      color:#ccc;
+      margin-bottom:25px;
+    }
+
+    /* ===== INFO ===== */
+
+    .info-box{
+      background:#1f1f1f;
+      padding:18px;
+      border-radius:12px;
+      margin-bottom:25px;
+      text-align:left;
+      font-size:.95rem;
+      line-height:1.7;
+    }
+
+    .info-box span{
+      color:var(--amarillo);
+      font-weight:600;
+    }
+
+    /* ===== CAMPOS ===== */
+
+    .campo{
+      margin-bottom:20px;
+      text-align:left;
+    }
+
+    .campo label{
+      font-size:.85rem;
+      color:#ccc;
+      display:block;
+      margin-bottom:5px;
+    }
+
+    .campo input{
+      width:100%;
+      padding:12px 14px;
+      border-radius:8px;
+      border:none;
+      outline:none;
+      background:#262626;
+      color:white;
+      font-size:.95rem;
+      transition:.3s;
+    }
+
+    .campo input:focus{
+      background:#2f2f2f;
+      box-shadow:0 0 0 2px var(--amarillo);
+    }
+
+    /* ===== BOTONES ===== */
+
+    .btn-guardar{
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:10px;
+      background:var(--rojo);
+      color:white;
+      font-weight:800;
+      font-size:1rem;
+      cursor:pointer;
+      transition:.3s;
+      margin-top:10px;
+    }
+
+    .btn-guardar:hover{
+      background:var(--amarillo);
+      color:black;
+      transform:scale(1.05);
+    }
+
+    .btn-logout{
+      width:100%;
+      padding:12px;
+      margin-top:15px;
+      border:none;
+      border-radius:10px;
+      background:#333;
+      color:white;
+      font-weight:700;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    .btn-logout:hover{
+      background:#b00020;
+    }
+
+    /* ===== FOOTER ===== */
+
+    footer{
+      background:var(--negro);
+      border-top:3px solid var(--rojo);
+      padding:15px;
+      text-align:center;
+      font-size:.8rem;
+      color:#ccc;
+    }
+
+    footer span{
+      color:var(--amarillo);
+      font-weight:bold;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+
+<header>
+  <nav class="nav">
+
+    <div class="logo">
+      <a href="admin.html">
+        <img src="logo_pinchados.png" alt="Pinchados">
+      </a>
+    </div>
+
+    <div>
+      <a href="admin.html">
+        <button class="btn-login">PANEL</button>
+      </a>
+    </div>
+
+  </nav>
+</header>
+
+
+<!-- ===== PERFIL ===== -->
+
+<section class="perfil-container">
+
+  <div class="perfil-box">
+
+    <h2>👤 Mi Perfil</h2>
+
+    <p>Administración de cuenta</p>
+
+
+    <!-- INFO -->
+
+    <div class="info-box">
+
+      <strong>Usuario:</strong> <span id="userName">admin</span><br>
+
+      <strong>Rol:</strong> <span id="userRol">Administrador</span><br>
+
+      <strong>Último acceso:</strong> <span id="lastLogin">Hoy</span>
+
+    </div>
+
+
+    <!-- CAMBIAR CONTRASEÑA -->
+
+    <form>
+
+      <div class="campo">
+        <label>Nueva Contraseña</label>
+        <input type="password" placeholder="********">
+      </div>
+
+      <div class="campo">
+        <label>Confirmar Contraseña</label>
+        <input type="password" placeholder="********">
+      </div>
+
+      <button type="submit" class="btn-guardar">
+        GUARDAR CAMBIOS
+      </button>
+
+    </form>
+
+
+    <!-- LOGOUT -->
+
+    <button class="btn-logout" onclick="logout()">
+    Cerrar Sesión
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+  © 2026 <span>Pinchados</span> · Todos los derechos reservados
+</footer>
+
+
+<script>
+
+  /* PROTEGER */
+
+  const sesion = verificarSesion();
+
+
+  /* MOSTRAR DATOS */
+
+  document.getElementById("userName").innerText = sesion.user;
+  document.getElementById("userRol").innerText = sesion.rol;
+
+
+  /* FECHA SIMPLE */
+
+  let hoy = new Date().toLocaleDateString();
+
+  document.getElementById("lastLogin").innerText = hoy;
+
+  function logout(){
+  localStorage.removeItem("sesion");
+  window.location.href = "login.html";
+}
+
+
+const token = localStorage.getItem("token");
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (!token) {
+  window.location.href = "login.html";
+}
+
+document.getElementById("info").innerHTML = `
+  Nombre: ${user.nombre} <br>
+  Email: ${user.email}
+`;
+
+function logout() {
+  localStorage.clear();
+  window.location.href = "login.html";
+}
+
+
+</script>
+
+</body>
+</html>

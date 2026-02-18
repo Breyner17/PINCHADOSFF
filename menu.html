@@ -289,7 +289,9 @@ footer span{color:var(--amarillo);}
 </div>
 
 <div class="login">
-<button>INGRESAR</button>
+  <a href="login.html">
+    <button>INGRESAR</button>
+  </a>
 </div>
 
 </nav>
@@ -941,6 +943,16 @@ pedidos.push(nuevo);
 localStorage.setItem("pedidos",JSON.stringify(pedidos));
 
 }
+
+  const params = new URLSearchParams(window.location.search);
+  const categoria = params.get("categoria");
+
+  if (categoria) {
+    const seccion = document.getElementById(categoria);
+    if (seccion) {
+      seccion.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
 
 </script>

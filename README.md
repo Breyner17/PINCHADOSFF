@@ -1,2 +1,0 @@
-# PINCHADOSFF
-Pagina web Pinchados
