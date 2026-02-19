@@ -1,0 +1,292 @@
+body {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+body.cargado {
+  opacity: 1;
+}
+
+    :root {
+      --rojo: #e10600;
+      --amarillo: #ffcc00;
+      --negro: #0f0f0f;
+      --gris: #1b1b1b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--gris);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("../img/bg_banner.png") center/cover no-repeat;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+    }
+
+    .logo img {
+      width: 150px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.15);
+    }
+
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+
+    .menu a img {
+      width: 160px;
+      transition: transform 0.3s ease;
+    }
+
+    .menu a:hover img {
+      transform: scale(1.2);
+    }
+
+    .login button {
+      background: var(--rojo);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login button:hover {
+      background: var(--amarillo);
+      color: black;
+      transform: scale(1.1);
+    }
+
+    /* ===== UBICACION ===== */
+    .ubicacion {
+      background: var(--negro);
+      padding: 80px 30px;
+    }
+
+    .ubicacion h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 50px;
+      color: var(--amarillo);
+    }
+
+    .ubicacion-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 200px;
+      align-items: center;
+    }
+
+    .ubicacion-img img {
+      width: 130%;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,.6);
+    }
+
+    .ubicacion-mapa iframe {
+      width: 100%;
+      height: 350px;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 0 15px 30px rgba(0,0,0,.6);
+    }
+
+    .direccion {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .direccion span {
+      color: var(--amarillo);
+      font-weight: bold;
+    }
+
+    @media(max-width:900px){
+      .ubicacion-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--negro);
+      border-top: 3px solid var(--rojo);
+      padding: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #ccc;
+      margin-top: auto;
+    }
+
+    footer span {
+      color: var(--amarillo);
+      font-weight: bold;
+    }
+
+    /* =====================
+   RESPONSIVE CELULAR
+===================== */
+
+@media (max-width: 768px){
+
+/* HEADER */
+
+.nav{
+flex-direction: column;
+gap: 15px;
+padding: 15px;
+}
+
+.logo img{
+width:120px;
+}
+
+.menu{
+flex-wrap: wrap;
+justify-content: center;
+gap:15px;
+}
+
+.menu a img{
+width:115px;
+}
+
+.login button{
+padding:8px 15px;
+font-size:14px;
+}
+
+
+/* UBICACION */
+
+.ubicacion{
+padding:40px 15px;
+}
+
+.ubicacion h2{
+font-size:1.7rem;
+margin-bottom:30px;
+}
+
+.ubicacion-grid{
+gap:40px;
+}
+
+.ubicacion-img img{
+width:100%;
+}
+
+.ubicacion-mapa iframe{
+height:250px;
+}
+
+
+/* DIRECCION */
+
+.direccion{
+font-size:0.95rem;
+margin-top:25px;
+line-height:1.5;
+}
+
+
+/* FOOTER */
+
+footer{
+font-size:12px;
+padding:12px;
+}
+
+}
+
+/* =====================
+   HEADER OPTIMIZADO MOVIL
+===================== */
+
+@media (max-width: 480px){
+
+/* CONTENEDOR */
+
+.nav{
+flex-direction: column;
+gap: 10px;
+padding: 10px;
+}
+
+
+/* LOGO */
+
+.logo{
+width:100%;
+display:flex;
+justify-content:center;
+}
+
+.logo img{
+width:105px;
+}
+
+
+/* MENU */
+
+.menu{
+width:100%;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.menu a img{
+width:80px;
+}
+
+
+/* BOTON LOGIN */
+
+/* BOTON LOGIN COMO MENU */
+
+
+.login button{
+padding:8px 15px;
+font-size:14px;
+}
+
+.login button{
+width:100%;
+font-size:13px;
+padding:8px;
+}
+
+}

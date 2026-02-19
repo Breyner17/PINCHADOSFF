@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pinchados | Inicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/select.css') }}">
+</head>
+
+<body>
+
+<!-- SLIDER DE FONDO -->
+<div class="slider">
+  <img src="{{ url_for('static', filename='img/fondo1.png') }}" alt="Fondo 1">
+  <img src="{{ url_for('static', filename='img/fondo2.png') }}" alt="Fondo 2">
+  <img src="{{ url_for('static', filename='img/fondo3.png') }}" alt="Fondo 3">
+</div>
+
+<!-- CONTENIDO CENTRAL -->
+<div class="container">
+
+  <div class="logo">
+    <img src="{{ url_for('static', filename='img/logo_pinchados.png') }}" alt="Pinchados">
+  </div>
+
+  <div class="botones">
+    <a href="{{ url_for('index') }}" class="boton">
+      <img src="{{ url_for('static', filename='img/pideya.png') }}" alt="Pide Ya">
+      Pide Ya
+    </a>
+
+    <a href="{{ url_for('login') }}" class="boton">
+      <img src="{{ url_for('static', filename='img/empleados.png') }}" alt="Solo Empleados">
+      Solo Empleados
+    </a>
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  © 2026 <span>Pinchados</span>
+</footer>
+
+<!-- JS -->
+<script src="{{ url_for('static', filename='js/select.js') }}"></script>
+</body>
+</html>

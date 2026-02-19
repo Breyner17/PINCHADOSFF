@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pinchados | Principal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FUENTE -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="logo">
+    <a href="{{ url_for('select') }}">
+    <img src="{{ url_for('static', filename='img/logo_pinchados.png') }}" alt="Logo">
+    </a>
+    </div>
+
+    <div class="menu">
+      <a href="{{ url_for('menu') }}"><img src="{{ url_for('static', filename='img/menu_boton.png') }}"></a>
+      <a href="{{ url_for('ubicacion') }}"><img src="{{ url_for('static', filename='img/ubicacion_boton.png') }}"></a>
+      <a href="#"><img src="{{ url_for('static', filename='img/contacto_boton.png') }}"></a>
+      <a href="#"><img src="{{ url_for('static', filename='img/nosotros_boton.png') }}"></a>
+    </div>
+
+  </nav>
+</header>
+
+<section class="categorias">
+  <div class="categorias-grid">
+
+    <div class="categoria">
+      <a href="{{ url_for('menu') }}?categoria=hamburguesas">
+        <img src="{{ url_for('static', filename='img/hamburguesas.png') }}">
+      </a>
+      <span>Hamburguesas</span>
+    </div>
+
+    <div class="categoria">
+      <a href="{{ url_for('menu') }}?categoria=perros">
+        <img src="{{ url_for('static', filename='img/perros.png') }}">
+      </a>
+      <span>Perros</span>
+    </div>
+
+    <div class="categoria">
+      <a href="{{ url_for('menu') }}?categoria=pinchos">
+        <img src="{{ url_for('static', filename='img/pinchos.png') }}">
+      </a>
+      <span>Pinchos</span>
+    </div>
+
+    <div class="categoria">
+      <a href="{{ url_for('menu') }}?categoria=adicionales">
+        <img src="{{ url_for('static', filename='img/adicionales.png') }}">
+      </a>
+      <span>Adicionales</span>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="como-llegar">
+  <div class="como-llegar-grid">
+    <div class="como-llegar-img">
+      <img src="{{ url_for('static', filename='img/ubicacion_pinchados.png') }}">
+    </div>
+
+    <div class="como-llegar-mapa">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3951.7444445568444!2d-72.48796999999999!3d7.921739999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwNTUnMTguMyJOIDcywrAyOScxNi43Ilc!5e0!3m2!1ses-419!2sco!4v1771359967116!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="promo-banners">
+  <a href="{{ url_for('menu') }}" class="promo-banner">
+    <img src="{{ url_for('static', filename='img/banner1.png') }}">
+    <div class="banner-overlay"><button>PÍDELO AHORA</button></div>
+  </a>
+
+  <a href="{{ url_for('menu') }}" class="promo-banner">
+    <img src="{{ url_for('static', filename='img/banner2.png') }}">
+    <div class="banner-overlay"><button>PÍDELO AHORA</button></div>
+  </a>
+
+  <a href="{{ url_for('menu') }}" class="promo-banner">
+    <img src="{{ url_for('static', filename='img/banner3.png') }}">
+    <div class="banner-overlay"><button>PÍDELO AHORA</button></div>
+  </a>
+</section>
+
+<section class="como-pedir">
+  <h2>¿Cómo hacer tu pedido en PINCHADOS?</h2>
+  <br></br>
+
+
+  <div class="pasos-grid">
+    <div class="paso">
+      <img src="{{ url_for('static', filename='img/paso1.png') }}">
+      <h3>Elige tu comida</h3>
+      <p>Explora el menú y selecciona tus productos favoritos.</p>
+    </div>
+
+    <div class="paso">
+      <img src="{{ url_for('static', filename='img/paso2.png') }}">
+      <h3>Realiza tu pedido</h3>
+      <p>Haz tu pedido desde la página.</p>
+    </div>
+
+    <div class="paso">
+      <img src="{{ url_for('static', filename='img/paso3.png') }}">
+      <h3>Disfruta tu comida</h3>
+      <p>Recibe tu pedido caliente.</p>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  © 2026 <span>Pinchados</span> · Domicilios: 315 881 0226
+</footer>
+
+<!-- POP UP PROMOCIONAL -->
+<div id="promoPopup" class="popup-overlay">
+  <div class="popup">
+    <span class="cerrar" onclick="cerrarPopup()">✕</span>
+
+    <img src="{{ url_for('static', filename='img/promo.png') }}">
+
+    <div class="popup-content">
+      <h3>Pide ya tu comida</h3>
+      <p>A domicilio o directamente a tu mesa</p>
+
+      <a href="{{ url_for('menu') }}" class="btn-popup">
+        VER MENÚ
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+</body>
+</html>

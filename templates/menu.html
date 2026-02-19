@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pinchados | Menú</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<nav class="nav">
+
+<div class="logo">
+<a href="{{ url_for('index') }}">
+<img src="{{ url_for('static', filename='img/logo_pinchados.png') }}">
+</a>
+</div>
+
+<div class="menu">
+<a href="{{ url_for('menu') }}"><img src="{{ url_for('static', filename='img/menu_boton.png') }}"></a>
+<a href="{{ url_for('ubicacion') }}"><img src="{{ url_for('static', filename='img/ubicacion_boton.png') }}"></a>
+<a href="#"><img src="{{ url_for('static', filename='img/contacto_boton.png') }}"></a>
+<a href="#"><img src="{{ url_for('static', filename='img/nosotros_boton.png') }}"></a>
+</div>
+
+
+</nav>
+</header>
+
+<!-- CATEGORIAS -->
+
+<section class="categorias">
+
+<div class="categorias-grid">
+
+<div class="categoria" onclick="irA('hamburguesas')">
+<img src="{{ url_for('static', filename='img/hamburguesas.png') }}">
+<p>Hamburguesas</p>
+</div>
+
+<div class="categoria" onclick="irA('perros')">
+<img src="{{ url_for('static', filename='img/perros.png') }}">
+<p>Perros</p>
+</div>
+
+<div class="categoria" onclick="irA('pinchos')">
+<img src="{{ url_for('static', filename='img/pinchos.png') }}">
+<p>Pinchos</p>
+</div>
+
+<div class="categoria" onclick="irA('adicionales')">
+<img src="{{ url_for('static', filename='img/adicionales.png') }}">
+<p>Adicionales y Bebidas</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTOS -->
+
+<section class="seccion" id="hamburguesas">
+
+<h2>HAMBURGUESAS</h2>
+
+<div class="menu-container">
+
+<div class="producto">
+<img src="{{ url_for('static', filename='img/diablita_hamburguesa.png') }}">
+<div class="producto-info">
+<h3>La Diablita</h3>
+<div class="precio">$12.000</div>
+<h5>PAN BRIOCHE - 140G DE CARNE - QUESO CHEDDAR - TOCINETA</h5>
+<h5>CEBOLLA - TOMATE - LECHUGA</h5>
+<br></br>
+<button onclick="abrirProducto('Hamburguesa Diablita',12000)">Pedir</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="{{ url_for('static', filename='img/lsm_hamburguesa.png') }}">
+<div class="producto-info">
+<h3>La Santa María</h3>
+<div class="precio">$16.000</div>
+<h5>PAN BRIOCHE - 140G DE CARNE - POLLO 140G - TOCINETA</h5>
+<h5>QUESO CHEDDAR - CEBOLLA - TOMATE - LECHUGA</h5>
+<br></br>
+<button onclick="abrirProducto('Hamburguesa La Santa María',16000)">Pedir</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="{{ url_for('static', filename='img/diabla_hamburguesa.png') }}">
+<div class="producto-info">
+<h3>La Diabla</h3>
+<div class="precio">$18.000</div>
+<h5>PAN BRIOCHE - 140G DE CARNE - QUESO CHEDDAR </h5>
+<h5>PIÑA GRILLÉ - TOCINETA - CEBOLLA - TOMATE</h5>
+<br></br>
+<button onclick="abrirProducto('Hamburguesa La Diabla',18000)">Pedir</button>
+</div>
+</div>
+
+
+<div class="producto">
+<img src="{{ url_for('static', filename='img/porkina_hamburguesa.png') }}">
+<div class="producto-info">
+<h3>La Porkina</h3>
+<div class="precio">$20.000</div>
+<h5>PAN BRIOCHE - 140G DE CARNE - QUESO CHEDDAR - LECHUGA</h5>
+<h5>MERMELADA DE TOCINO - TOCINETA - CEBOLLA - TOMATE</h5>
+<br></br>
+<button onclick="abrirProducto('Hamburguesa La Porkina',20000)">Pedir</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="seccion" id="perros">
+
+<h2>PERROS CALIENTES</h2>
+
+<div class="menu-container">
+
+<div class="producto">
+<img src="{{ url_for('static', filename='img/cerbero_perro.png') }}">
+<div class="producto-info">
+<h3>Cerbero</h3>
+<div class="precio">$8.000</div>
+<h5>PAN BRIOCHE - SALCHICHA - QUESO MOZZARELLA</h5>
+<h5>PAPAS FOSFORITO - SALSAS DE LA CASA</h5>
+<br></br>
+<button onclick="abrirProducto('Perro Cerbero',8000)">Pedir</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="{{ url_for('static', filename='img/porky_perro.png') }}">
+<div class="producto-info">
+<h3>Porky</h3>
+<div class="precio">$15.000</div>
+<h5>PAN BRIOCHE - SALCHICHA - QUESO MOZZARELLA</h5>
+<h5>MERMELADA DE TOCINO - SALSAS DE LA CASA</h5>
+<br></br>
+<button onclick="abrirProducto('Perro Porky',15000)">Pedir</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="{{ url_for('static', filename='img/granjero_perro.png') }}">
+<div class="producto-info">
+<h3>Granjero</h3>
+<div class="precio">$10.000</div>
+<h5>PAN BRIOCHE - SALCHICHA BAÑADA EN BBQ</h5>
+<h5>QUESADILLA DE MAIZ TIERNO - SALSAS DE LA CASA</h5>
+<br></br>
+<button onclick="abrirProducto('Perro Granjero',10000)">Pedir</button>
+</div>
+</div>
+
+
+<div class="producto">
+<img src="{{ url_for('static', filename='img/arca_perro.png') }}">
+<div class="producto-info">
+<h3>El Arca</h3>
+<div class="precio">$13.000</div>
+<h5>PAN BRIOCHE - DOBLE SALCHICHA - QUESO MOZZARELLA</h5>
+<h5>DOBLE TOCINETA - SALSAS DE LA CASA</h5>
+<br></br>
+<button onclick="abrirProducto('Perro El Arca',13000)">Pedir</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="seccion" id="pinchos">
+
+<h2>PINCHOS</h2>
+
+<div class="menu-container">
+
+<div class="producto">
+<img src="{{ url_for('static', filename='img/pollo_pincho.png') }}">
+<div class="producto-info">
+<h3>Pollo</h3>
+<div class="precio">$10.000</div>
+<h5>BROCHETA DE POLLO CON PIMENTÓN Y CEBOLLA ASADA</h5>
+<h5>& PAPAS FRITAS</h5>
+<br></br>
+<button onclick="abrirProducto('Pincho de Pollo',10000)">Pedir</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="{{ url_for('static', filename='img/carne_pincho.png') }}">
+<div class="producto-info">
+<h3>Carne</h3>
+<div class="precio">$12.000</div>
+<h5>BROCHETA DE CARNE CON PIMENTÓN Y CEBOLLA ASADA</h5>
+<h5>& PAPAS FRITAS</h5>
+<br></br>
+<button onclick="abrirProducto('Pincho de Carne',12000)">Pedir</button>
+</div>
+</div>
+
+<div class="producto">
+<img src="{{ url_for('static', filename='img/mixto_pincho.png') }}">
+<div class="producto-info">
+<h3>Mixto</h3>
+<div class="precio">$14.000</div>
+<h5>BROCHETA DE POLLO Y CARNE CON PIMENTÓN Y CEBOLLA ASADA</h5>
+<h5>& PAPAS FRITAS</h5>
+<br></br>
+<button onclick="abrirProducto('Pincho Mixto',14000)">Pedir</button>
+</div>
+</div>
+
+
+</div>
+</section>
+
+
+<!-- BOTON CARRITO -->
+
+<div class="carrito-btn" onclick="abrirCarrito()">
+🛒 Carrito <span id="contador">0</span>
+</div>
+
+<!-- MODAL PRODUCTO -->
+
+<div class="modal" id="modalProducto">
+
+<div class="modal-box">
+
+<h3 id="prodNombre"></h3>
+
+<label>Cantidad:</label>
+<input type="number" id="prodCantidad" value="1" min="1">
+
+<div class="aviso">
+⚠️ Todas serán iguales.  
+Para diferentes, agrégalas aparte.
+</div>
+
+<textarea id="prodNota" placeholder="Notas"></textarea>
+
+<button class="confirmar" onclick="agregarCarrito()">Agregar</button>
+<button class="cancelar" onclick="cerrarProducto()">Cancelar</button>
+
+</div>
+</div>
+
+<!-- MODAL CARRITO -->
+
+<div class="modal" id="modalCarrito">
+
+<div class="modal-box">
+
+<h3>Tu Pedido</h3>
+
+<div id="listaCarrito"></div>
+
+<hr>
+
+<h4>Nombre</h4>
+
+<input id="nombreCliente" placeholder="Nombre de quien recibe">
+
+<h4>Número de Teléfono</h4>
+
+<input id="telefonoCliente" placeholder="Tu número teléfonico">
+
+<h4>Forma de Pago</h4>
+
+<select id="metodoPago">
+<option>Bancolombia</option>
+<option>Nequi</option>
+<option>Daviplata</option>
+<option>Efectivo</option>
+</select>
+
+<h4>Tipo</h4>
+
+<div class="aviso">
+⚠️ El domicilio es gratis solo para el barrio
+Niza.
+</div>
+
+<select id="tipoPedido" onchange="cambiarTipo()">
+<option value="mesa">Mesa</option>
+<option value="domicilio">Domicilio</option>
+</select>
+
+<div id="mesaBox">
+<select id="mesaNum">
+<option>Mesa 1</option>
+<option>Mesa 2</option>
+<option>Mesa 3</option>
+<option>Mesa 4</option>
+<option>Mesa 5</option>
+<option>Mesa 6</option>
+<option>Mesa 7</option>
+</select>
+</div>
+
+<div id="domicilioBox" style="display:none">
+
+<input id="direccion" placeholder="Dirección">
+<textarea id="detallesDom" placeholder="Detalles"></textarea>
+
+</div>
+
+<h4 id="total"></h4>
+
+<button class="confirmar" onclick="enviarPedido()">Enviar</button>
+<button class="cancelar" onclick="cerrarCarrito()">Cerrar</button>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+ © 2026 <span>Pinchados</span> · Domicilios: 315 881 0226
+</footer>
+
+<script src="{{ url_for('static', filename='js/menu.js') }}"></script>
+
+
+</body>
+</html>
