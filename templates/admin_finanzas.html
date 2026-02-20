@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pinchados | Finanzas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin_finanzas.css') }}">
+
+<!-- Librerías -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+</head>
+<body>
+
+
+<!-- 🔐 LOGIN ADMIN -->
+<div id="loginBox">
+  <div class="login-card">
+    <h2>Acceso Finanzas</h2>
+    <input type="password" id="claveAdmin" placeholder="Contraseña">
+    <button onclick="verificarAcceso()">Entrar</button>
+  </div>
+</div>
+
+
+
+<!-- PANEL (oculto hasta login) -->
+<div id="panelFinanzas" style="display:none;">
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo">
+      <img src="{{ url_for('static', filename='img/logo_pinchados.png') }}">
+    </div>
+
+    <h2>Finanzas</h2>
+
+    <div class="nav-right">
+
+      <a href="/admin" class="btn-back">⬅ Panel</a>
+      <a href="/logout" class="logout">Salir</a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- RESUMEN GENERAL -->
+
+<section class="resumen">
+
+  <div class="card">
+    <h3>Total General</h3>
+    <p id="totalGeneral">$0</p>
+  </div>
+
+  <div class="card">
+    <h3>Pedidos Completados</h3>
+    <p id="totalPedidos">0</p>
+  </div>
+
+  <div class="card">
+    <h3>Promedio Pedido</h3>
+    <p id="promedio">$0</p>
+  </div>
+
+  <div class="card">
+    <h3>Total del Día</h3>
+    <p id="totalDia">$0</p>
+  </div>
+
+</section>
+
+
+<!-- FILTROS -->
+
+<section class="filtros">
+
+  <input type="date" id="filtroFecha">
+
+  <input type="text" id="buscar"
+  placeholder="Buscar cliente o teléfono">
+
+  <select id="filtroPago">
+    <option value="">Método</option>
+    <option>Nequi</option>
+    <option>Efectivo</option>
+    <option>Bancolombia</option>
+    <option>Nu</option>
+  </select>
+
+  <select id="ordenTotal">
+    <option value="">Orden</option>
+    <option value="mayor">Mayor → Menor</option>
+    <option value="menor">Menor → Mayor</option>
+  </select>
+
+</section>
+
+
+<!-- BOTONES -->
+
+<section class="acciones-finanzas">
+
+  <button onclick="exportarExcel()">
+    Exportar Excel
+  </button>
+
+  <button class="btn-borrar"
+  onclick="limpiarFinanzasDia()">
+    Limpiar pedidos del día
+  </button>
+
+</section>
+
+<!-- LISTA -->
+
+<main class="contenedor">
+  <div id="listaFinanzas"></div>
+</main>
+
+
+<footer>
+  © <span>Pinchados</span> Admin
+</footer>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/admin_finanzas.js') }}"></script>
+
+</body>
+</html>

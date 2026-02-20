@@ -1,0 +1,325 @@
+:root{
+  --rojo:#e10600;
+  --amarillo:#ffcc00;
+  --negro:#0f0f0f;
+  --gris:#1b1b1b;
+  --gris2:#151515;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:var(--gris);
+  color:white;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  opacity:0;
+  animation:fadeIn .5s ease forwards;
+}
+
+@keyframes fadeIn{
+  to{opacity:1;}
+}
+
+
+/* ================= LOGIN ================= */
+
+#loginBox{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:var(--gris);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.login-card{
+  background:var(--negro);
+  padding:35px;
+  border-radius:15px;
+  border:2px solid var(--rojo);
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.login-card h2{
+  color:var(--amarillo);
+  margin-bottom:10px;
+}
+
+.login-card input{
+  width:240px;
+  padding:12px;
+  margin:15px 0;
+  border-radius:8px;
+  border:none;
+  outline:none;
+}
+
+.login-card button{
+  background:var(--rojo);
+  color:white;
+  border:none;
+  padding:10px 25px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  transition:.3s;
+}
+
+.login-card button:hover{
+  background:var(--amarillo);
+  color:black;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+  background:
+  linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+  url("../img/bg_banner.png") center/cover no-repeat;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:15px 30px;
+}
+
+.logo img{
+  width:130px;
+}
+
+.nav h2{
+  color:var(--amarillo);
+}
+
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.btn-back{
+  background:#333;
+  color:white;
+  padding:8px 14px;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+.logout{
+  background:var(--rojo);
+  color:white;
+  padding:8px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.logout:hover{
+  background:var(--amarillo);
+  color:black;
+}
+
+
+/* ================= RESUMEN ================= */
+
+.resumen{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  padding:25px;
+}
+
+.card{
+  background:var(--negro);
+  border:2px solid var(--rojo);
+  border-radius:18px;
+  padding:25px;
+  text-align:center;
+  transition:.3s;
+}
+
+.card h3{
+  color:var(--amarillo);
+  margin-bottom:10px;
+}
+
+.card p{
+  font-size:26px;
+  font-weight:800;
+}
+
+.card:hover{
+  transform:scale(1.04);
+  border-color:var(--amarillo);
+}
+
+
+/* ================= FILTROS ================= */
+
+.filtros{
+  padding:0 25px 20px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.filtros input,
+.filtros select{
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #333;
+  background:#111;
+  color:white;
+}
+
+.filtros input::placeholder{
+  color:#aaa;
+}
+
+
+/* ================= BOTONES ================= */
+
+.acciones-finanzas{
+  padding:0 25px 25px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.acciones-finanzas button{
+  padding:10px 18px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  transition:.3s;
+  background:var(--rojo);
+  color:white;
+}
+
+.acciones-finanzas button:hover{
+  background:var(--amarillo);
+  color:black;
+}
+
+.btn-borrar{
+  background:#c0392b;
+}
+
+.btn-borrar:hover{
+  background:#ff4d4d;
+  color:white;
+}
+
+
+/* ================= GRAFICA ================= */
+
+.grafica{
+  padding:0 25px 25px;
+}
+
+canvas{
+  background:var(--negro);
+  border-radius:12px;
+  padding:10px;
+}
+
+
+/* ================= LISTA ================= */
+
+.contenedor{
+  padding:0 25px 30px;
+}
+
+.registro{
+  background:var(--negro);
+  border:1px solid #333;
+  border-radius:12px;
+  padding:15px;
+  margin-bottom:12px;
+  transition:.2s;
+}
+
+.registro:hover{
+  background:var(--gris2);
+  border-color:var(--rojo);
+}
+
+.detalle{
+  margin-top:8px;
+  font-size:14px;
+  color:#ccc;
+  line-height:1.4;
+}
+
+.btnEliminar{
+  margin-top:10px;
+  background:var(--rojo);
+  border:none;
+  color:white;
+  padding:6px 14px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:13px;
+  transition:.3s;
+}
+
+.btnEliminar:hover{
+  background:var(--amarillo);
+  color:black;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:var(--negro);
+  text-align:center;
+  padding:15px;
+  margin-top:auto;
+  font-size:13px;
+  color:#ccc;
+}
+
+footer span{
+  color:var(--amarillo);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:700px){
+
+  .nav{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .resumen{
+    grid-template-columns:1fr;
+  }
+
+  .filtros{
+    flex-direction:column;
+  }
+
+  .acciones-finanzas{
+    flex-direction:column;
+  }
+
+}

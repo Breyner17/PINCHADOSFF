@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Admin</title>
+<meta charset="UTF-8">
+<title>Pinchados | Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
 </head>
+
 <body>
-  <h1>Bienvenido Administrador</h1>
-  <a href="/logout">Cerrar sesión</a>
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo">
+      <img src="{{ url_for('static', filename='img/logo_pinchados.png') }}">
+    </div>
+
+    <h2>Panel Administrativo</h2>
+
+    <div class="nav-right">
+
+      <a href="/logout" class="logout">Cerrar sesión</a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<main class="dashboard">
+
+  <a href="/admin/pendientes" class="card">
+    <h3>Pedidos Pendientes</h3>
+    <p id="countPendientes">0</p>
+  </a>
+
+
+  <a href="/admin/confirmados" class="card">
+    <h3>Pedidos Confirmados</h3>
+    <p>Ver historial</p>
+  </a>
+
+
+  <a href="/admin/finanzas" class="card">
+    <h3>Finanzas</h3>
+    <p id="totalFinanzas">$0</p>
+  </a>
+
+
+  <a href="/admin/empleados" class="card">
+    <h3>Empleados</h3>
+    <p>Administrar</p>
+  </a>
+
+</main>
+
+
+<footer>
+  © <span>Pinchados</span> Admin
+</footer>
+
+
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+
 </body>
 </html>

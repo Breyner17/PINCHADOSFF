@@ -544,3 +544,7 @@ padding:8px;
   transform: scale(1.1);
   transition: transform 0.3s ease;
 }
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}

@@ -1,0 +1,234 @@
+:root{
+  --rojo:#e10600;
+  --amarillo:#ffcc00;
+  --negro:#0f0f0f;
+  --gris:#1b1b1b;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--gris);
+  color:white;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+
+/* HEADER */
+
+header{
+  background:
+  linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+  url("../img/bg_banner.png") center/cover no-repeat;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+}
+
+.logo img{
+  width:120px;
+}
+
+.nav h2{
+  color:var(--amarillo);
+}
+
+.nav-right{
+  display:flex;
+  gap:15px;
+}
+/* BOTONES */
+
+.btn-back,
+.logout,
+.btn-clear{
+  background:var(--rojo);
+  color:white;
+  padding:7px 12px;
+  border-radius:6px;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.btn-clear{
+  background:#444;
+}
+
+.btn-back:hover,
+.logout:hover,
+.btn-clear:hover{
+  background:var(--amarillo);
+  color:black;
+}
+
+
+/* CONTADOR */
+
+.contador{
+  text-align:center;
+  background:#111;
+  margin:15px auto;
+  padding:10px 20px;
+  border-radius:10px;
+  width:fit-content;
+  font-weight:600;
+}
+
+
+/* FILTROS */
+
+.filtros{
+  max-width:900px;
+  margin:15px auto;
+  padding:10px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+}
+
+.filtros input,
+.filtros select{
+  padding:8px;
+  border-radius:6px;
+  border:none;
+  outline:none;
+  font-size:14px;
+}
+
+
+/* CONTENEDOR */
+
+.contenedor{
+  max-width:1000px;
+  width:100%;
+  margin:auto;
+  padding:20px;
+}
+
+
+/* PEDIDO */
+
+.pedido{
+  background:var(--negro);
+  border:1px solid #444;
+  border-radius:12px;
+  padding:15px;
+  margin-bottom:15px;
+}
+
+.pedido h3{
+  color:var(--amarillo);
+  margin-bottom:8px;
+}
+
+.info{
+  font-size:14px;
+  color:#ccc;
+  margin-bottom:8px;
+}
+
+.detalle{
+  background:#111;
+  padding:8px;
+  border-radius:6px;
+  font-size:13px;
+  white-space:pre-wrap;
+}
+
+
+/* FOOTER */
+
+footer{
+  background:var(--negro);
+  text-align:center;
+  padding:12px;
+  margin-top:auto;
+  font-size:12px;
+  color:#aaa;
+}
+
+footer span{
+  color:var(--amarillo);
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:700px){
+
+  .nav{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .filtros{
+    flex-direction:column;
+  }
+
+}
+
+body {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* TARJETA DE PEDIDO */
+
+
+/* BOTONES */
+
+.acciones{
+  display:flex;
+  gap:10px;
+}
+
+.btnEliminar{
+  background:#e53935;
+  color:#fff;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:14px;
+  transition:0.2s;
+}
+
+.btnEliminar:hover{
+  background:#c62828;
+}
+
+/* BOTÓN LIMPIAR TODO (si lo usas en HTML) */
+
+.btnLimpiar{
+  background:#333;
+  color:#fff;
+  border:none;
+  padding:10px 18px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-bottom:15px;
+}
+
+.btnLimpiar:hover{
+  background:#000;
+}

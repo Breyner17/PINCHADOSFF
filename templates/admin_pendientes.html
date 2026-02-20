@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pinchados | Pendientes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin_pendientes.css') }}">
+
+</head>
+<body>
+
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo">
+      <img src="{{ url_for('static', filename='img/logo_pinchados.png') }}">
+    </div>
+
+    <h2>Pedidos Pendientes</h2>
+
+    <div class="nav-right">
+
+      <a href="/admin" class="btn-back">⬅ Panel</a>
+
+      <a href="/logout" class="logout">Salir</a>
+
+    </div>
+
+  </div>
+
+</header>
+
+<div class="contador-pendientes">
+  Pedidos pendientes: <span id="totalPendientes">0</span>
+</div>
+
+
+<!-- BUSCADOR -->
+
+<section class="filtros">
+
+  <input type="text" id="buscar"
+  placeholder="🔍 Buscar nombre, tel, dirección...">
+
+  <select id="filtroPago">
+    <option value="">Método</option>
+    <option>Nequi</option>
+    <option>Efectivo</option>
+    <option>Bancolombia</option>
+    <option>Nu</option>
+  </select>
+
+  <select id="filtroTipo">
+    <option value="">Tipo</option>
+    <option value="mesa">Mesa</option>
+    <option value="domicilio">Domicilio</option>
+  </select>
+
+  <select id="ordenPrecio">
+    <option value="">Precio</option>
+    <option value="mayor">Mayor → Menor</option>
+    <option value="menor">Menor → Mayor</option>
+  </select>
+
+</section>
+
+
+
+<!-- CONTENIDO -->
+
+<main class="contenedor">
+
+  <div id="listaPedidos"></div>
+
+</main>
+
+
+
+<footer>
+  © <span>Pinchados</span> Admin
+</footer>
+
+
+
+<script src="{{ url_for('static', filename='js/admin_pendientes.js') }}"></script>
+
+</body>
+</html>

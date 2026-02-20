@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from werkzeug.security import generate_password_hash, check_password_hash
+import os
 
 app = Flask(__name__)
-app.secret_key = "clave_super_secreta_cambiala"
+app.secret_key = os.environ.get("SECRET_KEY", "clave_local_para_pruebas")
 
 # 🔐 Admin
 ADMIN_USER = "admin"
@@ -61,6 +62,31 @@ def admin_panel():
     if not session.get("admin"):
         return redirect(url_for("login"))
     return render_template("admin.html")
+
+
+@app.route("/admin")
+def admin_dashboard():
+    return render_template("admin.html")
+
+
+@app.route("/admin/pendientes")
+def admin_pendientes():
+    return render_template("admin_pendientes.html")
+
+
+@app.route("/admin/confirmados")
+def admin_confirmados():
+    return render_template("admin_confirmados.html")
+
+
+@app.route("/admin/finanzas")
+def admin_finanzas():
+    return render_template("admin_finanzas.html")
+
+
+@app.route("/admin/empleados")
+def admin_empleados():
+    return render_template("admin_empleados.html")
 
 
 # ======================

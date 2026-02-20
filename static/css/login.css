@@ -224,3 +224,92 @@
       color:var(--amarillo);
       font-weight:bold;
     }
+
+  /* ===== VISTA CELULAR ===== */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  .nav{
+    padding:12px 18px;
+  }
+
+  .logo img{
+    width:120px;
+  }
+
+  .btn-registro{
+    padding:8px 14px;
+    font-size:.85rem;
+  }
+
+  /* LOGIN */
+  .login-container{
+    padding:20px 15px;
+  }
+
+  .login-box{
+    padding:30px 20px;
+    border-radius:16px;
+  }
+
+  .login-box h2{
+    font-size:1.6rem;
+    margin-bottom:20px;
+  }
+
+  .campo input{
+    padding:14px;
+    font-size:1rem;
+  }
+
+  /* RECORDAR */
+  .opciones{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px;
+    font-size:.8rem;
+  }
+
+  /* BOTONES */
+  .btn-login,
+  .btn-volver{
+    padding:15px;
+    font-size:1rem;
+  }
+
+  /* LINKS */
+  .links{
+    font-size:.85rem;
+  }
+
+  /* FOOTER */
+  footer{
+    font-size:.75rem;
+    padding:12px;
+  }
+}
+
+/* ===== VISTA CELULAR PEQUEÑO ===== */
+@media (max-width: 480px) {
+
+  .logo img{
+    width:100px;
+  }
+
+  .login-box{
+    padding:25px 18px;
+  }
+
+  .login-box h2{
+    font-size:1.4rem;
+  }
+
+  .btn-login,
+  .btn-volver{
+    font-size:.95rem;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
